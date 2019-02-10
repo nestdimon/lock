@@ -24,13 +24,13 @@ interface LockInterface
      * @param int $timeout
      * @return bool
      */
-    public function lock($key, $timeout = self::EXPIRE): bool;
+    public function lock($key, $timeout = self::EXPIRE);
 
     /**
      * @param string $key
      * @return bool
      */
-    public function unlock($key): bool;
+    public function unlock($key);
 
     /**
      * close
@@ -40,10 +40,10 @@ interface LockInterface
     /**
      * @return string
      */
-    public function getDriver(): string;
+    public function getDriver();
 
     /**
      * @return bool
      */
-    public static function isSupported(): bool;
+    public static function isSupported();
 }

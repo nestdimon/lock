@@ -54,7 +54,7 @@ class SemaphoreLock extends BaseDriver
     /**
      * {@inheritdoc}
      */
-    public function lock($key, $timeout = self::EXPIRE): bool
+    public function lock($key, $timeout = self::EXPIRE)
     {
         return sem_acquire($this->semId); // , $noWait = false
     }
@@ -62,7 +62,7 @@ class SemaphoreLock extends BaseDriver
     /**
      * {@inheritdoc}
      */
-    public function unlock($key): bool
+    public function unlock($key)
     {
         return sem_release($this->semId);
     }
@@ -82,7 +82,7 @@ class SemaphoreLock extends BaseDriver
     /**
      * @return bool
      */
-    public static function isSupported(): bool
+    public static function isSupported()
     {
         return \function_exists('sem_get');
     }
@@ -93,7 +93,7 @@ class SemaphoreLock extends BaseDriver
      * @return int|string
      * @throws \LogicException
      */
-    public static function ftok(string $pathname, $projectId)
+    public static function ftok($pathname, $projectId)
     {
         if (\strlen($projectId) > 1) {
             throw new \LogicException("the project id must be a one character(int/str). Input: $projectId");

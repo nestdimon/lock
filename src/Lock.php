@@ -69,7 +69,7 @@ class Lock
     /**
      * @return array
      */
-    public static function getDriverMap(): array
+    public static function getDriverMap()
     {
         return self::$driverMap;
     }
@@ -77,7 +77,7 @@ class Lock
     /**
      * {@inheritDoc}
      */
-    public static function isSupported(): bool
+    public static function isSupported()
     {
         /** @var LockInterface $class */
         foreach ([self::DRIVER_SEM, self::DRIVER_FILE] as $name) {

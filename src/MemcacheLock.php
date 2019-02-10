@@ -40,7 +40,7 @@ class MemcacheLock extends BaseDriver
      * {@inheritdoc}
      * @throws \RuntimeException
      */
-    public function lock($key, $timeout = self::EXPIRE): bool
+    public function lock($key, $timeout = self::EXPIRE)
     {
         $wait = 20000;
         $totalWait = 0;
@@ -63,7 +63,7 @@ class MemcacheLock extends BaseDriver
      * @param string $key
      * @return bool
      */
-    public function unlock($key): bool
+    public function unlock($key)
     {
         return $this->mem->delete(self::PREFIX . $key);
     }

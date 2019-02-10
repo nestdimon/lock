@@ -85,7 +85,7 @@ abstract class BaseDriver implements LockInterface
      * Method to get property Options
      * @return  array
      */
-    public function getOptions(): array
+    public function getOptions()
     {
         return $this->options;
     }
@@ -106,7 +106,7 @@ abstract class BaseDriver implements LockInterface
     /**
      * @return string
      */
-    public function getDriver(): string
+    public function getDriver()
     {
         return $this->driver;
     }
@@ -114,7 +114,7 @@ abstract class BaseDriver implements LockInterface
     /**
      * @return bool
      */
-    public static function isSupported(): bool
+    public static function isSupported()
     {
         return true;
     }
